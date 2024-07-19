@@ -1,0 +1,1 @@
+export const BaseURL = "https://assignment01-backend-inky.vercel.app";
