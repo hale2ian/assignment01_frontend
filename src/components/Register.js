@@ -16,6 +16,11 @@ function Register() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        if (!username || !email || !password || !firstName || !lastName || !dateOfBirth) {
+            setRegisterStatus('Please provide all fields for successful registration!');
+            return;
+        }
+
         let data = JSON.stringify({
             "username": username,
             "email": email,
@@ -41,7 +46,11 @@ function Register() {
             })
             .catch(error => {
                 console.error(error);
-                setRegisterStatus('Registration Failed!');
+                if (error.response && error.response.data && error.response.data.username) {
+                    setRegisterStatus('Username is already taken!');
+                } else {
+                    setRegisterStatus('Registration Failed!');
+                }
             });
     };
 
