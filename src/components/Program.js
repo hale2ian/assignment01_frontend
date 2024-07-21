@@ -8,8 +8,10 @@ function Program() {
         let config = {
             method: 'get',
             maxBodyLength: Infinity,
-            url: BaseURL + '/loginapp/Program',
-            headers: {}
+            url: BaseURL + '/loginapp/program',
+            headers: {
+                'Authorization': 'Token 040cf3f369beec7c2f980b967be6b021ba5537b5'
+            }
         };
         axios.request(config)
             .then((response) => {
