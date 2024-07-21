@@ -21,6 +21,7 @@ function TopBar() {
               <NavDropdown.Item href="/course">Course</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link href="/register">Register</Nav.Link>
             {/*<Nav.Link href="#" disabled>*/}
             {/*  Link*/}
             {/*</Nav.Link>*/}
