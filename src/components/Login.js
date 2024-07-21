@@ -34,15 +34,25 @@ function Login() {
             data: data
         };
 
+        if (!username || !password) {
+            setLogin_status("Please provide both username and password.");
+            return;
+        }
+
         axios.request(config)
             .then((response) => {
                 console.log(JSON.stringify(response.data));
                 setLogin_status("Login Successful!");
-                navigate("/home");
+                
+                if (response.data.role === 'admin') {
+                    navigate("/home");
+                } else {
+                    navigate("/userhome");
+                }
             })
             .catch((error) => {
                 console.log(error);
-                setLogin_status("Login Failed!");
+                setLogin_status("Login Failed! Please check your credentials and try again.");
             });
     }
     return (
