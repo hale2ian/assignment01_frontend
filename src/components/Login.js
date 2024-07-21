@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import axios from "axios";
 import {BaseURL} from "../consistents";
+import {useNavigate} from "react-router";
 
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [login_status, setLogin_status] = useState("");
+    const navigate = useNavigate();
 
     function usernameHandler(e) {
         setUsername(e.target.value);
@@ -36,6 +38,7 @@ function Login() {
             .then((response) => {
                 console.log(JSON.stringify(response.data));
                 setLogin_status("Login Successful!");
+                navigate("/home");
             })
             .catch((error) => {
                 console.log(error);

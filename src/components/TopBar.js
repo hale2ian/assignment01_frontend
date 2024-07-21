@@ -15,7 +15,6 @@ function TopBar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="/home">Home</Nav.Link>
             <NavDropdown title="Study" id="navbarScrollingDropdown">
               <NavDropdown.Item href="/program">Program</NavDropdown.Item>
               <NavDropdown.Divider />
