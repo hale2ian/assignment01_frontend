@@ -8,8 +8,10 @@ function Course() {
         let config = {
             method: 'get',
             maxBodyLength: Infinity,
-            url: BaseURL + '/loginapp/Course',
-            headers: {}
+            url: BaseURL + '/loginapp/course',
+            headers: {
+                'Authorization': 'Token 040cf3f369beec7c2f980b967be6b021ba5537b5'
+            }
         };
         axios.request(config)
             .then((response) => {
