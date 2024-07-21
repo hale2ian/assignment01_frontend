@@ -38,7 +38,7 @@ function Login() {
             .then((response) => {
                 console.log(JSON.stringify(response.data));
                 setLogin_status("Login Successful!");
-                navigate("/home");
+                navigate("/userhome");
             })
             .catch((error) => {
                 console.log(error);
