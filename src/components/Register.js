@@ -46,8 +46,12 @@ function Register() {
             })
             .catch(error => {
                 console.error(error);
-                if (error.response && error.response.data && error.response.data.username) {
-                    setRegisterStatus('Username is already taken!');
+                if (error.response && error.response.data) {
+                    if (error.response.data.error === "Username already exists") {
+                        setRegisterStatus('Username is already taken!');
+                    } else {
+                        setRegisterStatus('Registration Failed!');
+                    }
                 } else {
                     setRegisterStatus('Registration Failed!');
                 }
